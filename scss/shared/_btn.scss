@@ -1,0 +1,181 @@
+@mixin colors($variable) {
+	border-color:$variable;
+	color:$variable;
+	@if ($variable == $white) {
+		background-color:transparent;
+	} @else if ($variable == transparent) {
+		background-color:transparent;
+		color:$red;
+		border-color:$red;
+	}
+	&:hover {
+		background-color:$variable;
+		color:white;
+		@if ($variable == $white) {
+			color:$blueDark;
+		} @else if ($variable == transparent) {
+			background-color:$red;
+			color:$white;
+			border-color:$red;
+		}
+		border-color:$variable;
+	}
+	&.btn-solid {
+		background-color:$variable;
+		color:white;
+		@if ($variable == $white) {
+			color: #919191;
+		}
+		@if ($variable == $greyLighter) {
+			color: #919191;
+		}
+	}
+	&.btn-solid:hover {
+		color:$variable;
+		background-color:white;
+		@if ($variable == $greyLighter) {
+			color: white;
+			background-color:$red;
+		}
+	}
+	+ .btn-solid:not(.btn-red) {
+		background-color:lighten($variable,20);
+		border-color:lighten($variable,20);
+	}
+	&.btn-inverse {
+		background-color:transparent;
+		border-color:$variable;
+		color:$variable;
+	}
+	&.btn-inverse:hover {
+		.no-touchevents & {
+			background-color:white;
+			color:$variable;
+			@if ($variable == $white) {
+				color:$blueDark;
+			}
+		}
+	}
+}
+
+.btn {
+	padding: 15px 35px;
+	border: 2px solid $greyLight;
+	border-radius: 5px;
+	background: white;
+	color: $greyDark;
+	font-size: 16px;
+	display: inline-block;
+	vertical-align: middle;
+	cursor: pointer;
+	text-decoration:none;
+	@include transition(color .35s, background-color .35s);
+	margin:.25em 0;
+	text-align: center;
+	.fa {
+		margin-right: 10px;
+	}
+	&:hover {
+		.no-touchevents & {
+			color:white;
+			background:$greyLight;
+			border-color:$greyLight;
+		}
+	}
+	&.btn-block {
+		display:block;
+		clear: both;
+		max-width:100%;
+	}
+	&.btn-md {
+		font-size:20px;
+	}
+	&.btn-lg {
+		font-size:22px;
+	}
+	&.btn-caps {
+		text-transform:uppercase;
+	}
+	&[disabled="disabled"], &[disabled="disabled"]:hover {
+		background-color: $inactive !important;
+		cursor: not-allowed;
+	}
+}
+
+// Remove the margin if the button is displayed inline with other elements
+.form-group .btn {
+	margin:0;
+}
+
+.btn.btn-black { @include colors($black) }
+.btn.btn-blue { @include colors($blue) }
+.btn.btn-red { @include colors($red) }
+.btn.btn-grey { @include colors($grey) }
+.btn.btn-greyLighter { @include colors($greyLighter) }
+.btn.btn-white { @include colors($white) }
+.btn.btn-transparent { @include colors(transparent) }
+
+input[type="submit"], input[type="button"], .button, a.btn[role="button"], a.contactSubmit {
+	cursor: pointer;
+	&:not(.btnRemove):not(.btnAdd):not(.btnRemove-hover):not(.btnAdd-hover) {
+		background: $green;
+		border-radius: 0;
+		border: none;
+		color: white;
+		font-family: $body-txt;
+		text-transform: uppercase;
+		padding: 10px 20px;
+		line-height: 36px;
+		width: 100%;
+		display: inline-block;
+		text-align: center;
+        text-decoration: none;
+        box-shadow: $shadow;
+        transition: $shadowTransition;
+		&.btn-big {
+			padding: 15px 60px !important;
+		}
+		&:hover {
+			&:not(.ui-state-disabled) {
+				background: $greenDark;
+                box-shadow: $shadowLarge;
+			}
+		}
+		&.form-control {
+			line-height: 36px;
+			width: 100%;
+		}
+	}
+	&.btn.ui-button-text-only .ui-button-text {
+		padding: 0;
+	}
+}
+
+.btn-orderHistory {
+	line-height: 22px;
+	height: 24px;
+	width: 100%;
+	padding: 0 !important;
+	margin: 0;
+	border: 1px solid white !important;
+	border-radius: 4px !important;
+}
+
+@mixin tablet() {
+	.btn {
+		//padding-top:5px;
+		//padding-bottom:5px;
+		font-size:18px;
+	}
+
+	.btn.btn-inverse:hover {
+		.no-touchevents & {
+			background:white;
+			color:$red;
+		}
+	}
+}
+
+@media (min-width:$screen-sm-min) {
+	@include tablet();
+}

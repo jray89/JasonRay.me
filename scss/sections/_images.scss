@@ -1,0 +1,26 @@
+.section#images-section {
+    padding-bottom: 30px;
+    .row.branding {
+        div {
+            height: 200px;
+            margin-bottom: 30px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            a {
+                border: none;
+                display: inline-block;
+                transition: opacity .3s;
+                img {
+                    border: none;
+                    max-height: 200px;
+                    width: auto;
+                }
+                &:hover {
+                    opacity: .7;
+                }
+            }
+        }
+    }
+}

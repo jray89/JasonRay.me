@@ -1,0 +1,411 @@
+.u-headingTxt {
+    font-family: $heading-txt;
+}
+.u-bodyTxt {
+    font-family: $body-txt;
+}
+
+.u-inlineBlock {
+	display:inline-block;
+	vertical-align: middle;
+	margin:0;
+}
+.u-block {
+    display: block;
+}
+
+.u-hidden {
+    display:none !important;
+}
+
+.u-floatLeft {
+	float:left !important;
+}
+.u-floatRight {
+	float:right !important;
+}
+.u-floatNone {
+	float:none !important;
+}
+.u-clear {
+	clear: both;
+}
+
+.u-flipH {
+	-moz-transform: scaleX(-1);
+	-o-transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+	filter: FlipH;
+	-ms-filter: "FlipH";
+}
+.u-flipV {
+	-moz-transform: scaleY(-1);
+	-o-transform: scaleY(-1);
+	-webkit-transform: scaleY(-1);
+	transform: scaleY(-1);
+	filter: FlipV;
+	-ms-filter: "FlipV";
+}
+
+.u-flexBox {
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+	align-items:center;
+}
+.u-flexBox-stretch {
+	align-items:stretch;
+}
+.u-flexBox-column {
+	flex-direction: column;
+}
+.u-flexBox-center {
+	justify-content: center;
+}
+.u-flexChild {
+	-webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
+	-moz-box-flex: 1;         /* OLD - Firefox 19- */
+	width: 20%;               /* For old syntax, otherwise collapses. */
+	-webkit-flex: 1;          /* Chrome */
+	-ms-flex: 1;              /* IE 10 */
+	flex: 1;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+	& + & {
+		//padding-left:25px;
+	}
+	> *:first-child {
+		margin-top: 0;
+	}
+	> *:last-child {
+		margin-bottom:0;
+	}
+}
+
+.u-textCenter {
+	text-align: center;
+}
+.u-textRight {
+	text-align: right;
+}
+.u-textLeft {
+	text-align: left;
+}
+
+.u-textXs {
+	font-size: 50% !important;
+}
+.u-textSm {
+	font-size: 75% !important;
+}
+.u-textMd {
+	font-size: 100% !important;
+}
+.u-textLg {
+	font-size: 125% !important;
+}
+.u-textXl {
+	font-size: 150% !important;
+}
+.u-textXxl {
+	font-size: 200% !important;
+}
+
+.u-uppercase {
+	text-transform: uppercase;
+}
+.u-standardCase {
+	text-transform: none;
+}
+.u-capitalizeCase {
+	text-transform:capitalize;
+}
+
+.u-positionAbsolute {
+	position: absolute;
+}
+.u-positionRelative {
+	position: relative;
+}
+.u-positionStatic {
+    position: static;
+}
+
+.u-cursorDefault {
+	cursor: default !important;
+}
+.u-cursorPointer {
+	cursor: pointer !important;
+}
+.u-cursorMove {
+	cursor: move !important;
+}
+
+.u-bold {
+	font-weight: 600;
+}
+.u-normalWeight {
+	font-weight: normal;
+}
+
+.u-noBorder {
+	border: none !important;
+}
+
+.u-overflowHidden {
+	overflow: hidden;
+}
+
+.u-linkReset {
+	text-decoration:none;
+	transition:color .35s;
+}
+
+.u-noUnderline {
+	text-decoration: none;
+}
+
+.u-greyLightBg {
+	background-color: $greyLight;
+}
+
+.u-blueDark {
+	color: $blueDark !important;
+}
+.u-blueGreen {
+	color: $blueGreen !important;
+}
+.u-greyDark {
+	color: $greyDark !important;
+}
+.u-grey {
+	color: $grey !important;
+}
+.u-red {
+	color: $red !important;
+}
+
+.u-noEdge-30 {
+	margin-left: -30px;
+	margin-right: -30px;
+	padding-left: 30px;
+	padding-right: 30px;
+	&.u-shrinking {
+		@media (max-width:$screen-sm-max) {
+			margin-left: -15px;
+			margin-right: -15px;
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+	}
+}
+.u-noEdge-15 {
+	margin-left: -15px;
+	margin-right: -15px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+
+.u-subHeading {
+	font-size: 12pt;
+	color: #261459;
+}
+
+.u-borderTop {
+	border-top: 1px solid $greyBorder;
+}
+.u-borderBottom {
+	border-bottom: 1px solid $greyBorder;
+}
+.u-borderLeft-none {
+	border-left: none;
+}
+.u-or-lineBehind {
+	text-align: center;
+	position: relative;
+	&:before {
+		content: '';
+		background: $greyBorder;
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 50%;
+		height: 1px;
+	}
+	&:after {
+		content: 'OR';
+		background: white;
+		padding: 0 10px;
+		display: inline-block;
+		position: relative;
+	}
+}
+
+.u-widthAuto {
+	width: auto !important;
+}
+
+.u-lineHeight36 {
+	line-height: 36px;
+}
+.u-strike {
+	text-decoration: line-through;
+}
+
+.u-maxWidth480 {
+	max-width: 480px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.u-maxWidth360 {
+	max-width: 360px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+
+div.disappearing-status-message {
+	position: fixed;
+	background: $green;
+	color: white;
+	top: 70px;
+	right: 10px;
+	width: 300px;
+	padding: 15px;
+	text-align: left;
+	box-shadow: $shadowLarge;
+	z-index: 99999;
+	@include transition(opacity .35s);
+	opacity: 0;
+	font-size: 15px;
+	line-height: 28px;
+	&.slideDown {
+		opacity: 1;
+	}
+	&.warning {
+		background-color: $red;
+	}
+	a {
+		color: white;
+	}
+	i.fa-times-circle {
+		cursor: pointer;
+		color: black;
+		opacity: .5;
+		line-height: 28px;
+		@include transition(opacity .35s);
+		&:hover {
+			opacity: 1;
+		}
+	}
+	@media (max-width: $screen-sm-max) {
+		top: 60px;
+	}
+}
+
+
+
+.TopLine-grey
+{
+	border-top: 1px solid #818181;
+}
+
+.vendorSmallAd
+{
+	width: 125px;
+	height: 250px;
+}
+
+.border-grey
+{
+	border: 1px solid #818181;
+}
+
+.scroll-box
+{
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+.altRow
+{
+	background-color: #e3e8f0;
+}
+
+.selectedRow
+{
+	background-color: #c0c0c1;
+	color: #261459;
+}
+.sortBox
+{
+	display: block;
+	padding-top: 5px;
+	padding-left: 5px;
+	padding-bottom: 5px;
+}
+.sortBox-selected-column
+{
+	display: inline-block;
+	padding-top: 5px;
+	padding-left: 5px;
+	padding-bottom: 5px;
+	background-color: #c0c0c1;
+	margin-top: 5px;
+}
+.sortBox-selected
+{
+	display: block;
+	padding-top: 5px;
+	padding-left: 5px;
+	padding-bottom: 5px;
+	background-color: #c0c0c1;
+}
+.WarehouseRow
+{
+	cursor: pointer;
+}
+
+/* Filter box */
+.FilterOptions
+{
+	background-color: #e3e8f0;
+	border-top: solid 1px black;
+	border-bottom: solid 1px black;
+	border-right: solid 1px black;
+	border-left: solid 1px black;
+	padding: 5px;
+}
+
+.ColorBox
+{
+	width: 24px;
+	height: 24px;
+}
+
+.VendorRow
+{
+	cursor: pointer;
+}
+
+
+.sticky-note 
+{ 
+	text-decoration:none;
+	color:#000;
+	background:#ffc;
+	display:block;
+	width:200px;
+	padding:1em;
+	min-height: 100px;
+	white-space: normal;
+	float: right;
+	font-size:100%;
+	-moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
+	-webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+	box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+}

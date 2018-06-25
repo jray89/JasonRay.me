@@ -1,0 +1,36 @@
+.hero-image {
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+    body.customize-support & {
+        min-height: calc(100vh - 32px);
+    }
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0,0,0,.4);
+        z-index: 0;
+    }
+    h1, h2 {
+        font-weight: normal;
+        text-shadow: 0 0 40px black;
+    }
+    h2 {
+        margin-top: 0;
+    }
+    h1, h2, a {
+        visibility: hidden;
+        position: relative;
+        z-index: 1;
+    }
+}

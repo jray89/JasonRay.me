@@ -1,0 +1,447 @@
+.btnAdd {
+	border: 0;
+	background: url(/images/add.gif) no-repeat;
+	height: 16px;
+	width: 16px;
+	cursor: pointer;
+}
+.btnAdd-hover {
+	border: 0;
+	background: url(/images/add-hover.gif) no-repeat;
+	height: 16px;
+	width: 16px;
+}
+.btnRemove {
+	border: 0;
+	background: url(/images/remove.gif) no-repeat;
+	height: 16px;
+	width: 16px;
+	cursor: pointer;
+}
+.btnRemove-hover {
+	border: 0;
+	background: url(/images/remove-hover.gif) no-repeat;
+	height: 16px;
+	width: 16px;
+}
+
+
+/* FORM ELEMENTS
+----------------------------------------------------------*/
+.formInput, .itemInput, .warehouseInput, .shipping
+{
+	/* just adding for intellisense, these are just used for jQuery selectors */
+}
+.fieldLabel
+{
+	text-align: right;
+	min-width: 100px;
+	white-space: nowrap;
+	color: #818181;
+	font-size: 10pt;
+	font-weight: bold;
+	width: 110px;
+	.small-labels & {
+		width: auto;
+		font-weight: normal;
+	}
+}
+.fieldLabelLeft
+{
+	text-align: left;
+	min-width: 100px;
+	white-space: nowrap;
+	color: #818181;
+	font-size: 10pt;
+	font-weight: bold;
+}
+.fieldLabelThin
+{
+	text-align: right;
+	min-width: 80px;
+	white-space: nowrap;
+	color: #818181;
+	font-size: 10pt;
+	font-weight: bold;
+}
+.fieldLabelThinTop
+{
+	text-align: right;
+	min-width: 80px;
+	white-space: nowrap;
+	color: #818181;
+	font-size: 10pt;
+	font-weight: bold;
+	vertical-align: top;
+}
+.fieldLabelTop
+{
+	text-align: right;
+	min-width: 100px;
+	white-space: nowrap;
+	color: #818181;
+	font-size: 10pt;
+	font-weight: bold;
+	vertical-align: top;
+}
+input[type=text].Thin, textarea.Thin
+{
+	width: 100px;
+}
+input[type=text], textarea
+{
+	width: 200px;
+}
+input[type=text].Wide, textarea.Wide
+{
+	width: 325px;
+}
+input[type=text].Fill
+{
+	width: 100%;
+}
+
+input[type=password]
+{
+	width: 200px;
+}
+
+fieldset
+{
+	padding: 0px 10px 10px 10px;
+	margin-bottom: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+
+.ValidationMessage, .ValidationMessage H2
+{
+	color: Red;
+}
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.error, .field-validation-error
+{
+	color: red !important;
+	background-color: pink !important;
+	//font-size: 12px;
+	//font-weight: bold;
+}
+
+.input-validation-valid, .field-validation-valid, .validation-summary-valid
+{
+	display: none;
+}
+.input-validation-error
+{
+	background: #fee !important;
+	border: 1px solid red !important;
+	outline: none !important;
+}
+.input-validation-error:focus
+{
+	outline: none !important;
+}
+
+input[type="text"].input-validation-error:focus, select.input-validation-error:focus
+{
+	outline: none !important;
+}
+
+.validation-summary-errors
+{
+	color: red;
+}
+.validation-summary-errors span
+{
+	font-weight: 700;
+}
+.validation-summary-errors ul
+{
+	list-style: disc inside;
+}
+.validation-summary-errors ul li
+{
+	font-weight: normal;
+}
+
+.validation-summary-errors ul li label, .validation-summary-errors ul li span
+{
+	display: inline !important;
+	font-weight: normal;
+}
+
+#error-list
+{
+	white-space: normal;
+}
+
+
+
+
+
+
+
+@mixin optional-at-root($sel) {
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
+  }
+}
+
+@mixin placeholder {
+  @include optional-at-root('::-webkit-input-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root('::-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-ms-input-placeholder') {
+    @content;
+  }
+}
+
+@include placeholder {
+	font-size: 13px;
+	color: $grey;
+	//text-transform: uppercase;
+	//text-align: center;
+}
+
+input:not([type="submit"]):not([type="button"]):not([type="radio"]):not([type="checkbox"]):not([type="image"]):not(.jqx-input),
+textarea,
+select {
+	padding:0 10px;
+	line-height: 36px;
+	height: 36px;
+	margin:0 5px 0 0;
+	border: 1px solid $greyBorder;
+	border-radius:0;
+	background-image: none;
+	box-shadow: 0 0 0;
+	background:none;
+    background-color: white;
+	transition:all .35s;
+	color:$grey;
+	min-width: 0;
+	&.invalid {
+		border-color:$redLighter;
+	}
+	&:focus, &.changed {
+		color:#444;
+		background:white;
+		border-color:$grey;
+		outline:none;
+		box-shadow:none;
+		&:invalid {
+			border-color:$redLighter;
+		}
+	}
+	&.changed {
+		border-color:$blueLight;
+		&:invalid {
+			border-color:$redLighter;
+		}
+	}
+	&[disabled] {
+		background: #f0f0f0;
+	}
+}
+select, input[type="number"] {
+	padding-right: 0 !important;
+}
+
+.input-group input:focus + * {
+	border-color:$grey;
+}
+
+
+.input-zip {
+	max-width:150px;
+}
+
+textarea {
+	// additional height spec for textarea inputs
+	height:250px;
+	line-height: 24px;
+	&.short {
+		height:75px;
+	}
+}
+
+input[type=text] {
+	.admin--editor-page-title & {
+		margin:10px 0;
+		color:$black;
+		font-weight:bold;
+		font-size: 13px;
+	}
+}
+
+input.form-control:not([type="submit"]):not([type="button"]):not([type="radio"]):not([type="checkbox"]):not([type="image"]), 
+input[type=file].form-control, 
+textarea.form-control, 
+select.form-control {
+	padding-top: 0;
+	padding-bottom: 0; 
+	height: 36px; 
+	line-height: 36px; 
+	width: 100%; 
+	margin-bottom: 15px;
+	//background: none;
+	//color: white;
+	border: none;
+	//opacity: .7;
+    box-shadow: none;
+    transition: $shadowTransition;
+    &:focus {
+        box-shadow: $shadow;
+		//opacity: 1;
+		//background: white;
+		//color: black;
+	}
+}
+
+textarea.form-control {
+	height: 100px;
+	line-height: 1.2em;
+    padding:10px;
+    font-family:sans-serif;
+}
+
+body.x-webkit {
+	input[type="radio"] {
+		appearance: none;
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		display: inline-block;
+		width: 5px;
+		height: 5px;
+		border: 3px solid white;
+		border-radius: 50%;
+		margin: 0 3px 0 0;
+		box-sizing: content-box;
+		background-color: white;
+		box-shadow: 0 0 0 1px #808080;
+		position: relative;
+		outline: none !important;
+		&:checked {
+			background-color: $blue;
+		}
+	}
+}
+
+.form-control { font-size: 1em; }
+
+//input[type="submit"],
+//input[type="button"],
+.submit {
+	@extend .btn;
+	border:none;
+	outline:none;
+	color:white;
+	background:$red;
+	border-radius:4px;
+	transition:all .35s;
+	padding:10px 12px;
+	margin:0;
+	max-width:150px;
+	&:hover {
+		background:#770e16;
+	}
+}
+
+
+.dropDown {
+	cursor: pointer;
+	background: white;
+	border: 1px solid $greyBorder;
+	border-bottom: none;
+	position: relative;
+	.dropDown-title {
+		border-bottom: 1px solid $greyBorder;
+		height: 36px;
+		line-height: 16px;
+		padding: 10px 36px 10px 10px;
+		position: relative;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		z-index: 1001;
+		@include transition(background-color .35s);
+		&:after {
+			font-family: 'SA-UI-ELEMENTS' !important;
+			speak: none;
+			font-style: normal;
+			font-weight: normal;
+			font-variant: normal;
+			text-transform: none;
+			line-height: 1;
+
+			/* Better Font Rendering =========== */
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+
+			content: "\e915";
+
+			color: $blueDark;
+			font-size: 6px;
+			margin-left: 10px;
+			line-height: 16px;
+			position: absolute;
+			right: 0;
+			top: 0;
+			height: 36px;
+			line-height: 36px;
+			width: 36px;
+			text-align: center;
+			@include transition(transform .35s);
+		}
+	}
+	.dropDown-content {
+		background: white;
+		//border: 1px solid $greyBorder;
+		border-top: none;
+		position: absolute;
+		z-index: 1000;
+		left: 0;
+		right: 0;
+		margin-top: -1px;
+		overflow: hidden;
+		max-height: 0;
+		@include box-shadow($shadow);
+		@include transition(max-height .35s, $shadowTransition);
+		.dropDown-item {
+			display: block;
+			line-height: 16px;
+			padding: 10px;
+			color: $grey;
+			text-decoration: none;
+			@include transition(none);
+			&:hover {
+				background: $blue;
+				color: white;
+			}
+		}
+	}
+	&.dropDown-open {
+		.dropDown-title {
+			background: $greyLight;
+			&:after {
+				@include transform(rotate(-180deg));
+			}
+		}
+		.dropDown-content {
+			@include box-shadow($shadowLarge);
+			max-height: 1000px;
+		}
+	}
+}

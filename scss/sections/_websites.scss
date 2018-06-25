@@ -1,0 +1,24 @@
+.section#websites-section {
+    background: $greyLight;
+    padding-bottom: 30px;
+    a.website {
+        display: block;
+        margin-bottom: 30px;
+        text-decoration: none;
+        color: black;
+        background-color: white;
+        box-shadow: $shadow;
+        transition: $shadowTransition, opacity .3s;
+        &:hover {
+            box-shadow: $shadowLarge;
+            opacity: .7;
+        }
+        img {
+            display: block;
+        }
+        span {
+            display: block;
+            padding: 30px;
+        }
+    }
+}

@@ -1,0 +1,32 @@
+/*!
+Theme Name: Jason's Theme
+Theme URI: http://jasonray.me/
+Author: Jason Ray
+Author URI: http://jasonray.me
+Description: The theme for my site.
+Version: 1.0.0
+Text Domain: jrwd
+Tags:
+*/
+
+/* third party */
+@import "vendor/normalize";
+@import "vendor/bootstrap/grid";
+
+/* shared */
+@import "shared/variables";
+@import "shared/margin";
+@import "shared/padding";
+@import "shared/btn";
+@import "shared/inputs";
+@import "shared/utilities";
+@import "shared/global";
+
+/* page sections */
+@import "sections/header";
+@import "sections/hero";
+@import "sections/section";
+@import "sections/footer";
+
+@import "sections/websites";
+@import "sections/images";

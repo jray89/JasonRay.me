@@ -1,0 +1,92 @@
+header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 60px;
+    line-height: 60px;
+    padding: 0 10px;
+    transition: background-color .3s, box-shadow .3s cubic-bezier(.4,0,.2,1);
+    z-index: 1000;
+    body.customize-support & {
+        top: 32px;
+    }
+    ul.menu {
+        list-style: none;
+        display: block;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        li {
+            flex: none;
+            &:first-of-type {
+                flex: 1;
+            }
+            a {
+                display: inline-block;
+                margin: 0 10px;
+                line-height: 60px;
+                text-decoration: none;
+                color: white;
+                position: relative;
+                text-shadow: 0 0 40px black;
+                &:after {
+                    content: '';
+                    opacity: 0;
+                    position: absolute;
+                    bottom: 12px;
+                    right: 0;
+                    left: 0;
+                    height: 2px;
+                    background: red;
+                    transition: opacity .3s;
+                }
+                &:hover {
+                    &:after {
+                        content: '';
+                        opacity: 1;
+                    }
+                }
+                &[href*=contact] {
+                    background-color: $blue;
+                    text-shadow: none;
+                    line-height: 30px;
+                    padding: 0 15px;
+                    border-radius: 15px;
+                    transition: background-color .3s;
+                    &:after {
+                        content: none;
+                    }
+                    &:hover {
+                        background-color: $blueDark;
+                    }
+                }
+            }
+            @media (max-width: 500px) {
+                a[href*="#"] {
+                    display: none;
+                }
+                &:first-of-type a,
+                a[href*=contact] {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+    body.solid-nav &,
+    body.no-hero & {
+        background-color: white;
+        box-shadow: $shadow;
+        ul.menu {
+            li {
+                a {
+                    color: black;
+                    text-shadow: none;
+                    &[href*=contact] {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
