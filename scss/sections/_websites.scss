@@ -2,19 +2,11 @@
     background: $greyLight;
     padding-bottom: 30px;
     a.website {
-        display: block;
-        margin-bottom: 30px;
-        text-decoration: none;
-        color: black;
-        background-color: white;
-        box-shadow: $shadow;
-        transition: $shadowTransition, opacity .3s;
-        &:hover {
-            box-shadow: $shadowLarge;
-            opacity: .7;
-        }
+        @extend .card;
         img {
+            float: none !important;
             display: block;
+            margin: 0 !important;
         }
         span {
             display: block;

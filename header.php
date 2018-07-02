@@ -5,20 +5,58 @@
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 <meta name="keywords" content="website,design,wordpress,branding,logo,calhoun,dalton,kennesaw,marietta,resaca,northwest,georgia,jason,ray,jr,web,designs,christian,freelance,contract,christ" />
-<meta name="description" content="Hi, I'm Jason. I’m a senior front end software developer based out of Northwest Georgia. There are several things that I’m very passionate about. These are a few: Loading a website that’s so quick you wonder if something’s broken (don’t worry, it’s not); Resizing a browser window as a website transitions seamlessly from desktop to tablet to phone; Watching a website creep to the top of the search results as organic traffic and SEO optimization converge." />
+<?php
+    $title = wp_title(' | ', false, 'right') . ' | Custom Web Design Northwest Georgia';
+    if (get_bloginfo('name')) {
+        $title = wp_title(' | ', false, 'right') . get_bloginfo('name') . ' | Custom Web Design Northwest Georgia';
+    }
+?>
+<?php
+    $desc = 'Hi, I’m Jason. I’m a senior front end software developer based out of Northwest Georgia. There are several things that I’m very passionate about. These are a few: Loading a website that’s so quick you wonder if something’s broken (don’t worry, it’s not); Resizing a browser window as a website transitions seamlessly from desktop to tablet to phone; Watching a website creep to the top of the search results as organic traffic and SEO optimization converge.';
+    $img = 'http://www.jasonray.me/wp-content/uploads/2018/06/programming-hands-optimized.jpg';
+
+    if (is_single()) {
+        //if single post then add excerpt as meta description
+        $desc = str_replace('"', '&quote;', strip_tags(wp_kses_post( wp_trim_words( $post->post_content, 55 ) ) ) );
+    } else if(is_category()) {
+        //if category page, use category description as meta description
+        $desc = strip_tags(category_description(get_category_by_slug(strtolower(get_the_category()))->term_id));
+    }
+?>
+
+<?php if (is_singular()) : ?>
+<?php $hero_img = get_field( 'hero_image', $post->ID ); ?>
+<?php
+    if(has_post_thumbnail( $post->ID )) {
+        //if the post has a featured image, use it
+        $thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
+        $img = esc_attr( $thumbnail_src[0] );
+    } else if($hero_img) {
+        //if the post has a hero image, use it
+        $thumbnail_src = wp_get_attachment_image_src( $hero_img, 'medium' );
+        $img = esc_attr( $thumbnail_src[0] );
+    }
+?>
+<?php endif; ?>
+
+<meta name="description" content="<?php echo $desc; ?>" />
+
+<meta property="og:type"          content="website" />
+<meta property="og:title"         content="<?php echo $title; ?>" />
+<meta property="og:description"   content="<?php echo $desc; ?>" />
+<meta property="og:image"         content="<?php echo $img; ?>"/>
+
+<meta name="theme-color" content="#29abe2">
 <meta name="google-site-verification" content="7iGWbvC8InfGb_HD_vBw6-eQiUCAOuAkU1oSm3NY_Y4" />
 
-<title><?php bloginfo('name'); ?> <?php wp_title(); ?></title>
-<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen,projection" />
+<title><?php echo $title; ?> </title>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
 <?php wp_head(); ?>
  
 </head>
 
-<?php $hero_img = get_field( 'hero_image' ); ?>
 
-  
 <body id="<?php echo get_post_field( 'post_name', get_post() ); ?>-section" <?php if(!$hero_img): ?>class="no-hero"<?php endif; ?>>
  
 <div id="wrapper">
@@ -29,17 +67,17 @@
          
     </header>
 
-    <?php if($hero_img): ?>
+    <?php if(is_singular() && $hero_img): ?>
         <?php $img_meta = wp_get_attachment_metadata( $hero_img ); ?>
         <div class="hero-image parallax-window" data-parallax="scroll" data-natural-width="<?php echo $img_meta['width']; ?>" data-natural-height="<?php echo $img_meta['height']; ?>" data-image-src="<?php echo content_url( 'uploads/' . $img_meta['file'] ); ?>">
-        <?php if(get_field('hero_title')): ?>
-                <h1><?php echo get_field('hero_title'); ?></h1>
+        <?php if(get_field( 'hero_title', $post->ID )): ?>
+                <h1><?php echo get_field( 'hero_title', $post->ID ); ?></h1>
             <?php endif; ?>
-            <?php if(get_field('hero_subtitle')): ?>
-                <h2><?php echo get_field('hero_subtitle'); ?></h2>
+            <?php if(get_field( 'hero_subtitle', $post->ID )): ?>
+                <h2><?php echo get_field( 'hero_subtitle', $post->ID ); ?></h2>
             <?php endif; ?>
-            <?php if(get_field('hero_button_text') && get_field('hero_button_url')): ?>
-                <a href="<?php echo get_field('hero_button_url'); ?>"><?php echo get_field('hero_button_text'); ?></a>
+            <?php if(get_field( 'hero_button_text', $post->ID ) && get_field( 'hero_button_url', $post->ID )): ?>
+                <a href="<?php echo get_field( 'hero_button_url', $post->ID ); ?>"><?php echo get_field( 'hero_button_text', $post->ID ); ?></a>
             <?php endif; ?>
         </div>
     <?php endif; ?>

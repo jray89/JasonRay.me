@@ -1,13 +1,12 @@
 .hero-image {
     min-height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     color: white;
     position: relative;
+    padding: 0 15px;
     body.customize-support & {
         min-height: calc(100vh - 32px);
     }
@@ -25,7 +24,11 @@
         font-weight: normal;
         text-shadow: 0 0 40px black;
     }
+    h1 {
+        line-height: 40px;
+    }
     h2 {
+        line-height: 30px;
         margin-top: 0;
     }
     h1, h2, a {
