@@ -1,6 +1,27 @@
 footer {
-    background-color: $blue;
     color: white;
     padding: 60px 0;
     clear: both;
+}
+.footer-bottom {
+    background-color: rgba(0,0,0,0.75);
+    padding: 0 15px;
+    color: white;
+    font-size: 13px;
+    line-height: 40px;
+    a {
+        color: white;
+        text-decoration: none;
+        font-size: 22px;
+        margin-left: 10px;
+        @include transition(opacity .3s);
+        &:hover {
+            opacity: .5;
+        }
+    }
+    &:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
 }

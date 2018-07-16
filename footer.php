@@ -15,6 +15,14 @@
         <?php wp_footer(); ?>
     </div>
 </footer>
+<div class="footer-bottom">
+    <div class="u-floatRight">
+        <a target="_blank" href="https://github.com/man-b-e-a-s-t"><i class="fab fa-github-square"></i></a>
+        <a target="_blank" href="https://www.facebook.com/JasonRayWebDesign/"><i class="fab fa-facebook-square"></i></a>
+        <a target="_blank" href="https://www.linkedin.com/in/jason-ray-web-dev/"><i class="fab fa-linkedin"></i></a>
+    </div>
+    As an Amazon Associate I earn from qualifying purchases.
+</div>
 
 </body>
 </html>

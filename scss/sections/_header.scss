@@ -19,8 +19,13 @@ header {
         display: flex;
         li {
             flex: none;
+            height: 60px;
+            overflow: hidden;
             &:first-of-type {
                 flex: 1;
+                a {
+                    padding-right: 0;
+                }
             }
             a {
                 display: inline-block;
