@@ -4,16 +4,16 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-<meta name="keywords" content="website,design,wordpress,branding,logo,calhoun,dalton,kennesaw,marietta,resaca,northwest,georgia,jason,ray,jr,web,designs,christian,freelance,contract,christ" />
+<meta name="keywords" content="custom,software,consultant,workflow,automation,process,problem,solve,solver,solution,website,web,design,wordpress,branding,logo,atlanta,woodstock,canton,calhoun,dalton,kennesaw,marietta,resaca,northwest,georgia,jason,ray,jr,web,design,designs,christian,freelance,contract,christ" />
 <?php
-    $title = wp_title(' | ', false, 'right') . ' | Custom Web Design Northwest Georgia';
+    $title = wp_title(' | ', false, 'right') . ' | Web Design, Marketing & Workflow Automation, Greater Atlanta';
     if (get_bloginfo('name')) {
-        $title = wp_title(' | ', false, 'right') . get_bloginfo('name') . ' | Custom Web Design Northwest Georgia';
+        $title = wp_title(' | ', false, 'right') . get_bloginfo('name') . ' | Web Design, Marketing & Workflow Automation, Greater Atlanta';
     }
 ?>
 <?php
-    $desc = 'Hi, I’m Jason. I’m a senior front end software developer based out of Northwest Georgia. There are several things that I’m very passionate about. These are a few: Loading a website that’s so quick you wonder if something’s broken (don’t worry, it’s not); Resizing a browser window as a website transitions seamlessly from desktop to tablet to phone; Watching a website creep to the top of the search results as organic traffic and SEO optimization converge.';
-    $img = 'http://www.jasonray.me/wp-content/uploads/2018/06/programming-hands-optimized.jpg';
+    $desc = 'It’s my goal to help you serve more clients more effectively. I want to ensure that everything your business does or says reflects and enforces the reason for which it was created.';
+    $img = 'http://www.jasonray.me/wp-content/uploads/2018/10/idea_opt.jpg';
 
     if (is_single()) {
         //if single post then add excerpt as meta description
@@ -46,7 +46,7 @@
 <meta property="og:description"   content="<?php echo $desc; ?>" />
 <meta property="og:image"         content="<?php echo $img; ?>"/>
 
-<meta name="theme-color" content="#29abe2">
+<meta name="theme-color" content="#29abe2" />
 <meta name="google-site-verification" content="7iGWbvC8InfGb_HD_vBw6-eQiUCAOuAkU1oSm3NY_Y4" />
 
 <title><?php echo $title; ?> </title>
@@ -58,9 +58,7 @@
 
 
 <body id="<?php echo get_post_field( 'post_name', get_post() ); ?>-section" <?php if(!$hero_img): ?>class="no-hero"<?php endif; ?>>
- 
-<div id="wrapper">
- 
+  
     <header>
                                            
         <?php wp_nav_menu('menu_id=nav'); ?> 

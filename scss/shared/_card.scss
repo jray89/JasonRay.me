@@ -6,6 +6,23 @@
     background-color: white;
     box-shadow: $shadow;
     transition: $shadowTransition, opacity .3s;
+    &.featured {
+        position: relative;
+        background: #f4f4f4;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: rgb(41,171,226);
+            background: -moz-linear-gradient(left, rgba(41,171,226,1) 33%, rgba(229,228,195,1) 100%);
+            background: -webkit-linear-gradient(left, rgba(41,171,226,1) 33%,rgba(229,228,195,1) 100%);
+            background: linear-gradient(to right, rgba(41,171,226,1) 33%,rgba(229,228,195,1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#29abe2', endColorstr='#e5e4c3',GradientType=1 );
+        }
+    }
     img {
         float: left;
         margin-right: 15px;
@@ -24,9 +41,11 @@
         margin: 0;
         padding-bottom: 15px;
     }
-    &:hover {
-        box-shadow: $shadowLarge;
-        opacity: .7;
+    &:not(.no-hover) {
+        &:hover {
+            box-shadow: $shadowLarge;
+            opacity: .7;
+        }
     }
     &:after {
         content: '';
