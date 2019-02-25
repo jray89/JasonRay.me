@@ -17,10 +17,10 @@
             right: 0;
             height: 6px;
             background: rgb(41,171,226);
-            background: -moz-linear-gradient(left, rgba(41,171,226,1) 33%, rgba(229,228,195,1) 100%);
-            background: -webkit-linear-gradient(left, rgba(41,171,226,1) 33%,rgba(229,228,195,1) 100%);
-            background: linear-gradient(to right, rgba(41,171,226,1) 33%,rgba(229,228,195,1) 100%);
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#29abe2', endColorstr='#e5e4c3',GradientType=1 );
+            background: -moz-linear-gradient(left, #02b3e4 33%, #02ccba 100%);
+            background: -webkit-linear-gradient(left, #02b3e4 33%,#02ccba 100%);
+            background: linear-gradient(to right, #02b3e4 33%,#02ccba 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#02b3e4', endColorstr='#02ccba',GradientType=1 );
         }
     }
     img {
