@@ -4,15 +4,15 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-<meta name="keywords" content="custom,software,consultant,workflow,automation,process,problem,solve,solver,solution,website,web,design,wordpress,branding,logo,atlanta,woodstock,canton,calhoun,dalton,kennesaw,marietta,resaca,northwest,georgia,jason,ray,jr,web,design,designs,christian,freelance,contract,christ" />
+<meta name="keywords" content="culture,productivity,growth,unity,teamwork,consultant,workflow,automation,process,problem,solve,solver,solution,atlanta,woodstock,canton,calhoun,dalton,kennesaw,marietta,northwest,georgia,jason,ray,christian,contract,christ" />
 <?php
-    $title = wp_title(' | ', false, 'right') . ' | Web Design, Marketing & Workflow Automation, Greater Atlanta';
+    $title = wp_title(' | ', false, 'right');
     if (get_bloginfo('name')) {
-        $title = wp_title(' | ', false, 'right') . get_bloginfo('name') . ' | Web Design, Marketing & Workflow Automation, Greater Atlanta';
+        $title = wp_title(' | ', false, 'right') . get_bloginfo('name');
     }
 ?>
 <?php
-    $desc = 'It’s my goal to help you serve more clients more effectively. I want to ensure that everything your business does or says reflects and enforces the reason for which it was created.';
+    $desc = get_bloginfo('description');
     $img = 'http://www.jasonray.me/wp-content/uploads/2018/10/idea_opt.jpg';
 
     if (is_single()) {
@@ -75,7 +75,7 @@
                 <h2><?php echo get_field( 'hero_subtitle', $post->ID ); ?></h2>
             <?php endif; ?>
             <?php if(get_field( 'hero_button_text', $post->ID ) && get_field( 'hero_button_url', $post->ID )): ?>
-                <a href="<?php echo get_field( 'hero_button_url', $post->ID ); ?>"><?php echo get_field( 'hero_button_text', $post->ID ); ?></a>
+                <a class="btn btn-gradient" href="<?php echo get_field( 'hero_button_url', $post->ID ); ?>"><?php echo get_field( 'hero_button_text', $post->ID ); ?></a>
             <?php endif; ?>
         </div>
     <?php endif; ?>

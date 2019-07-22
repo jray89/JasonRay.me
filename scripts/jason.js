@@ -13,7 +13,7 @@ var jason = {
         $(document).scroll(function() {
             self.setHeaderStyle();
         });
-        $('#nav a[href*="#"]').click(function(e) {
+        $('a[href*="#"]').click(function(e) {
             e = e || window.event;
             let parts = $(this).attr('href').split('/');
             let hash = parts[parts.length - 1];

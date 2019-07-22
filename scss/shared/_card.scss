@@ -6,9 +6,11 @@
     background-color: white;
     box-shadow: $shadow;
     transition: $shadowTransition, opacity .3s;
+
     &.featured {
         position: relative;
         background: #f4f4f4;
+
         &:before {
             content: '';
             position: absolute;
@@ -16,17 +18,16 @@
             left: 0;
             right: 0;
             height: 6px;
-            background: rgb(41,171,226);
-            background: -moz-linear-gradient(left, #02b3e4 33%, #02ccba 100%);
-            background: -webkit-linear-gradient(left, #02b3e4 33%,#02ccba 100%);
-            background: linear-gradient(to right, #02b3e4 33%,#02ccba 100%);
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#02b3e4', endColorstr='#02ccba',GradientType=1 );
+            background: $gradientStart;
+            background: linear-gradient(90deg, $gradientStart, $gradientEnd);
         }
     }
+
     img {
         float: left;
         margin-right: 15px;
     }
+
     div.image {
         position: absolute;
         top: 0;
@@ -37,21 +38,41 @@
         background-size: cover;
         background-position: center;
     }
+
     p {
         margin: 0;
         padding-bottom: 15px;
     }
+
     &:not(.no-hover) {
         &:hover {
             box-shadow: $shadowLarge;
             opacity: .7;
         }
     }
+
     &:after {
         content: '';
         display: table;
         clear: both;
     }
+
+    .number {
+        border-radius: 50%;
+        color: white;
+        width: 45px;
+        text-align: center;
+        font-weight: bold;
+        background: linear-gradient(135deg, $gradientEnd -10%, $gradientStart 250%);
+        height: 45px;
+        display: block;
+        position: absolute;
+        right: -10px;
+        top: -10px;
+        font-size: 150%;
+        line-height: 45px;
+    }
+
     @media (max-width: 600px) {
         img {
             display: block;
@@ -59,13 +80,14 @@
             width: 100%;
             margin: 0;
         }
+
         div.image {
             position: relative;
             top: auto;
             bottom: auto;
             left: auto;
             width: 100%;
-            
+
         }
     }
 }

@@ -53,12 +53,13 @@ header {
                     }
                 }
                 &[href*=contact] {
-                    background-color: $blue;
+                    @extend .btn;
+                    @extend .btn-gradient;
+                    font-size: 16px;
                     text-shadow: none;
                     line-height: 30px;
                     padding: 0 15px;
-                    border-radius: 15px;
-                    transition: background-color .3s;
+                    margin-left: 10px;
                     &:after {
                         content: none;
                     }
